@@ -109,8 +109,78 @@
                 <input type="text" id="wordValue" placeholder="Enter a word (e.g., 'hello') to test invalid math">
             </div>
             
-            <button type="button" id="processBtn">Process Data</button>
-        </form>
-    </div>
+           <button type="button" id="processBtn">Process Data</button>
+</form>
+</div>
+
+<script>
+    document.getElementById("processBtn").addEventListener("click", function () {
+
+        // Part 2 - Task 1: Confirmation popup
+        var answer = confirm("are you sure?");
+
+        if (answer == false) {
+            alert("Processing cancelled!");
+            return;
+        }
+
+        // Part 1 - Task 1: Variables and string concatenation
+        var studentName = document.getElementById("studentName").value;
+        var age = document.getElementById("studentAge").value;
+        var enrolled = document.getElementById("isEnrolled").checked;
+
+        var sentence = "Student Name is " + studentName +
+                       ", Age is " + age +
+                       ", Enrolled status is " + enrolled;
+
+        alert(sentence);
+
+        // Part 1 - Task 2: Testing Infinity
+        var valueA = Number(document.getElementById("numA").value);
+        var valueB = Number(document.getElementById("numB").value);
+
+        var divisionResult = valueA / valueB;
+
+        alert(divisionResult);
+
+        // Part 1 - Task 3: Testing NaN
+        var textValue = document.getElementById("wordValue").value;
+        var nanResult = textValue / 2;
+
+        alert(nanResult);
+
+        // Part 1 - Task 4: Scientific notation
+        var largeNumber = 4.25e+6;
+        var smallNumber = 4.25e-6;
+
+        // Part 1 - Task 5: Display results
+        document.write("<h2>JavaScript Lab Results</h2>");
+
+        document.write("Division result: " + divisionResult + "<br>");
+        document.write("Text divided by 2: " + nanResult + "<br>");
+        document.write("Large number: " + largeNumber + "<br>");
+        document.write("Small number: " + smallNumber + "<br>");
+
+        // Part 2 - Task 2: Arrays and for...of loop
+var subjects = ["JavaScript", "HTML", "CSS"];
+
+document.write("<h3>My Subjects</h3>");
+
+for (var subject of subjects) {
+    document.write(subject + "<br>");
+}
+
+    // Part 2 - Task 3: Standard for loop
+    var count = Math.floor(valueA);
+
+    document.write("<h3>Student Name Loop</h3>");
+
+    for (var i = 0; i < count; i++) {
+        document.write(studentName + "<br>");
+    }
+
+
+    });
+</script>
 </body>
 </html>
